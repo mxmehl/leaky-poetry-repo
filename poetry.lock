@@ -168,18 +168,21 @@ test-randomorder = ["pytest-randomly"]
 
 [[package]]
 name = "isort"
-version = "5.13.2"
+version = "4.3.21"
 description = "A Python utility / library to sort Python imports."
 optional = false
-python-versions = ">=3.8.0"
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 groups = ["dev"]
 files = [
-    {file = "isort-5.13.2-py3-none-any.whl", hash = "sha256:8ca5e72a8d85860d5a3fa69b8745237f2939afe12dbf656afbcb47fe72d947a6"},
-    {file = "isort-5.13.2.tar.gz", hash = "sha256:48fdfcb9face5d58a4f6dde2e72a1fb8dcaf8ab26f95ab49fab84c2ddefb0109"},
+    {file = "isort-4.3.21-py2.py3-none-any.whl", hash = "sha256:6e811fcb295968434526407adb8796944f1988c5b65e8139058f2014cbe100fd"},
+    {file = "isort-4.3.21.tar.gz", hash = "sha256:54da7e92468955c4fceacd0c86bd0ec997b0e1ee80d97f67c35a78b719dccab1"},
 ]
 
 [package.extras]
-colors = ["colorama (>=0.4.6)"]
+pipfile = ["pipreqs", "requirementslib"]
+pyproject = ["toml"]
+requirements = ["pip-api", "pipreqs"]
+xdg-home = ["appdirs (>=1.4.0)"]
 
 [[package]]
 name = "lazy-object-proxy"
@@ -239,22 +242,43 @@ files = [
 
 [[package]]
 name = "pylint"
-version = "2.6.1"
+version = "2.5.0"
 description = "python code static checker"
 optional = false
 python-versions = ">=3.5.*"
 groups = ["dev"]
 files = [
-    {file = "pylint-2.6.1-py3-none-any.whl", hash = "sha256:c363263b5aa5d4101e0e0c345155accc663ae2148be93a712b9c5ba341120ef9"},
-    {file = "pylint-2.6.1.tar.gz", hash = "sha256:a112c3a6d0b1a08e0c1581ced69d3be9e2bedd2e1e1cd6965d0454353015e6d0"},
+    {file = "pylint-2.5.0-py3-none-any.whl", hash = "sha256:bd556ba95a4cf55a1fc0004c00cf4560b1e70598a54a74c6904d933c8f3bd5a8"},
+    {file = "pylint-2.5.0.tar.gz", hash = "sha256:588e114e3f9a1630428c35b7dd1c82c1c93e1b0e78ee312ae4724c5e1a1e0245"},
 ]
 
 [package.dependencies]
-astroid = ">=2.4.0,<2.5"
+astroid = ">=2.4.0,<=2.5"
 colorama = {version = "*", markers = "sys_platform == \"win32\""}
-isort = ">=4.2.5,<6"
+isort = ">=4.2.5,<5"
 mccabe = ">=0.6,<0.7"
 toml = ">=0.7.1"
+
+[[package]]
+name = "pyyaml"
+version = "5.1.1"
+description = "YAML parser and emitter for Python"
+optional = false
+python-versions = "*"
+groups = ["dev"]
+files = [
+    {file = "PyYAML-5.1.1-cp27-cp27m-win32.whl", hash = "sha256:70d9818f1c9cd5c48bb87804f2efc8692f1023dac7f1a1a5c61d454043c1d265"},
+    {file = "PyYAML-5.1.1-cp27-cp27m-win_amd64.whl", hash = "sha256:a0f329125a926876f647c9fa0ef32801587a12328b4a3c741270464e3e4fa778"},
+    {file = "PyYAML-5.1.1-cp34-cp34m-win32.whl", hash = "sha256:cd0618c5ba5bda5f4039b9398bb7fb6a317bb8298218c3de25c47c4740e4b95e"},
+    {file = "PyYAML-5.1.1-cp34-cp34m-win_amd64.whl", hash = "sha256:57acc1d8533cbe51f6662a55434f0dbecfa2b9eaf115bede8f6fd00115a0c0d3"},
+    {file = "PyYAML-5.1.1-cp35-cp35m-win32.whl", hash = "sha256:ceacb9e5f8474dcf45b940578591c7f3d960e82f926c707788a570b51ba59190"},
+    {file = "PyYAML-5.1.1-cp35-cp35m-win_amd64.whl", hash = "sha256:fe6a88094b64132c4bb3b631412e90032e8cfe9745a58370462240b8cb7553cd"},
+    {file = "PyYAML-5.1.1-cp36-cp36m-win32.whl", hash = "sha256:68c8dd247f29f9a0d09375c9c6b8fdc64b60810ebf07ba4cdd64ceee3a58c7b7"},
+    {file = "PyYAML-5.1.1-cp36-cp36m-win_amd64.whl", hash = "sha256:588c94b3d16b76cfed8e0be54932e5729cc185caffaa5a451e7ad2f7ed8b4043"},
+    {file = "PyYAML-5.1.1-cp37-cp37m-win32.whl", hash = "sha256:a3c252ab0fa1bb0d5a3f6449a4826732f3eb6c0270925548cac342bc9b22c225"},
+    {file = "PyYAML-5.1.1-cp37-cp37m-win_amd64.whl", hash = "sha256:86a93cccd50f8c125286e637328ff4eef108400dd7089b46a7be3445eecfa391"},
+    {file = "PyYAML-5.1.1.tar.gz", hash = "sha256:b4bb4d3f5e232425e25dda21c070ce05168a786ac9eda43768ab7f3ac2770955"},
+]
 
 [[package]]
 name = "six"
@@ -390,4 +414,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "0cf19fa7a8d474cdc3abfe9b1d14c26473d515b0b22b9bd0de2569642c193c02"
+content-hash = "9b65a4930d525bf424d549588972ba91ae59f88752c2594cf47811ea823b6384"
